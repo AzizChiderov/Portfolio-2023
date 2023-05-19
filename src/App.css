@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+SC:wght@300;400;500;600;700&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+    font-family: 'Cormorant SC', serif;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+.greeting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 80px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+  
+h1::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    animation: fadeIn 1.2s forwards;
+    margin-bottom: 20px;
+}
+
+.greeting h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 70px;
+    animation: fadeIn 1.3s forwards;
+}
+
+.greeting h2::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    animation: fadeIn 1.4s forwards;
+}
+
+.scroll {
+    background-color: transparent; 
+    position: absolute; 
+    width: 2em; 
+    height: 2em;
+    z-index: 80; 
+    border: 0 0.25em ; 
+    border-style: solid;
+    border-color: black;  
+    bottom: 25px; 
+    animation: scrolldown 2s ease-in-out infinite 0.15s;
+}
+.scroll:last-child {
+    bottom: 40px;
+}
+
+.scroll{
+left: 50%;
+transform: translateY(0%) rotate(45deg);
+opacity: 0;
+}
+
+@keyframes scrolldown {
+0%{
+transform: translateY(20%) rotate(45deg);
+opacity: 0.7;
+}
+50%{
+transform: translateY(0%) rotate(45deg);
+opacity: 0.2;
+}
+100%{
+transform: translateY(20%) rotate(45deg);
+opacity: 0.7;
+}
+}
