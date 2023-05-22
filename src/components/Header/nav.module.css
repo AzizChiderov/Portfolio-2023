@@ -1,9 +1,71 @@
 .burger_container {
 	width: 100%;
-	height: 80px;
 	display: flex;
-	justify-content: flex-end;
+    justify-content: space-between;
 	padding: 15px;
+    margin: 0 20px;
+}
+.greeting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+}
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 80px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+  
+h1::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    animation: fadeIn 1.2s forwards;
+    margin-bottom: 20px;
+}
+
+.greeting h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 70px;
+    animation: fadeIn 1.3s forwards;
+}
+
+.greeting h2::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    animation: fadeIn 1.4s forwards;
+}
+
+.scroll_box {
+    position: relative;
+}
+
+.scroll {
+    background-color: transparent; 
+    position: absolute; 
+    width: 2em; 
+    height: 2em;
+    border: 0 0.25em ; 
+    border-style: solid;
+    border-color: black;  
+    transform: translateY(0%) rotate(45deg);
+    opacity: 0;
+    left: 50%;
+    bottom: 25px; 
+    z-index: 80; 
+    animation: scrolldown 2s ease-in-out infinite 0.15s;
+}
+.scroll:nth-child(2n) {
+    margin-bottom: 10px;
 }
 
 .burger_menu {
@@ -20,6 +82,7 @@
 .burger_bar {
 	background-color: black;
 	width: 64px;
+    margin: 10px 0;
 	height: 0.2em;
 	transition: transform 2s ease;
 }
@@ -67,3 +130,29 @@
 	text-transform: uppercase;
 	font-size: 34px;
 }
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+@keyframes scrolldown {
+    0%{
+    transform: translateY(20%) rotate(45deg);
+    opacity: 0.7;
+    }
+    50%{
+    transform: translateY(0%) rotate(45deg);
+    opacity: 0.2;
+    }
+    100%{
+    transform: translateY(20%) rotate(45deg);
+    opacity: 0.7;
+    }
+    }

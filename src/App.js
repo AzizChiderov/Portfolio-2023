@@ -1,20 +1,23 @@
 import React from 'react';
 import './App.css';
-import Nav from "./components/Header/nav"
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Nav from "./components/Header/nav";
+import About from "./components/About/about";
+import Path from "./components/Path/path";
 
 function App() {
   return (
-    <>
-    <Nav />
-    <div className='greeting'>
-    <h1>Hi there! <br /> I’m Aziz Chiderov</h1>
-    <h2>Nice to meet you!</h2>
-    <h2>Scroll down to get to know me better</h2>
-    </div>
-    <div className='scroll'></div>
-    <div className='scroll'></div>
-    </>
+      <div className="app-container">
+        <div className='nav'>
+        <Nav />
+        </div>
+      <div className='about'>
+        <About />
+      </div>
+      <div className='path'>
+        <Path />
+      </div>
+      </div>
   );
 }
 
